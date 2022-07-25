@@ -1,6 +1,7 @@
 // ignore_for_file: deprecated_member_use
 
 import 'package:flutter/material.dart';
+import 'package:ola_mundo/home_page.dart';
 
 class LoginPage extends StatefulWidget {
   String email = '';
@@ -52,7 +53,9 @@ class _LoginPageState extends State<LoginPage> {
                     RaisedButton(
                       onPressed: () {
                         if (email == 'pedro@email.com' && senha == '123') {
-                          print('correto!');
+                       Navigator.of(context).pushReplacement(
+                        MaterialPageRoute(builder: ((context) => HomePage()))
+                       );
                         } else {
                           print('Senha ou Email, invalido!');
                         }
