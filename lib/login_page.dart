@@ -53,8 +53,8 @@ class _LoginPageState extends State<LoginPage> {
                     RaisedButton(
                       onPressed: () {
                         if (email == 'pedro@email.com' && senha == '123') {
-                       Navigator.of(context).pushReplacement(
-                        MaterialPageRoute(builder: ((context) => HomePage()))
+                     Navigator.of(context).pushReplacementNamed('/Home');
+                        MaterialPageRoute(builder: ((context) => HomePage())
                        );
                         } else {
                           print('Senha ou Email, invalido!');
