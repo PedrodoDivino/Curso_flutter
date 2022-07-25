@@ -25,7 +25,34 @@ class HomePageState extends State<HomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text('Contador:$counter'),
+             Container(
+                height: 20,
+              ),
             CustomSwitcher(),
+              Container(
+                height: 50,
+              ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              crossAxisAlignment: CrossAxisAlignment.center ,
+              children: [
+                Container(
+                  width: 50,
+                  height: 50,
+                  color: Color.fromARGB(255, 207, 204, 24),
+                ),
+                Container(
+                  width: 50,
+                  height: 50,
+                  color: Color.fromARGB(255, 80, 46, 131),
+                ),
+                Container(
+                  width: 50,
+                  height: 50,
+                  color: Color.fromARGB(255, 158, 37, 37),
+                ),
+              ],
+            )
           ],
         ),
       ),
