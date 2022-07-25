@@ -16,13 +16,11 @@ class AppWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // ignore: avoid_unnecessary_containers
-    return Container(
-      child:  Center(
-        child: Text(
-         title,
-          textDirection: TextDirection.ltr,
-          style: const TextStyle(color: Color.fromARGB(255, 92, 76, 163), fontSize: 50.0),
-        ),
+    return MaterialApp(
+      theme: ThemeData(primaryColor: Colors.red),
+      // ignore: avoid_unnecessary_containers
+      home: Container(
+        child: const Center(child: Text('teste')),
       ),
     );
   }
