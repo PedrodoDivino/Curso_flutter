@@ -11,10 +11,9 @@ class AppWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // ignore: avoid_unnecessary_containers
     return MaterialApp(
-      theme: ThemeData(primaryColor: Colors.red),
-      // ignore: avoid_unnecessary_containers
+      theme: ThemeData(primaryColor: Colors.red,
+      brightness:Brightness.dark ),
       home: HomePage(),
     );
   }
