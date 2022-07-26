@@ -28,11 +28,10 @@ class _LoginPageState extends State<LoginPage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Container(
-                  width: 250,
-                  height: 250,
-                  child: Image.network(
-                      'https://octodex.github.com/images/heisencat.png'),
-                ),
+                    width: 250,
+                    height: 250,
+                    child: Image.asset('assets/images/logo.png'),
+                    ),
                 Container(height: 30),
                 TextField(
                   onChanged: (text) {
