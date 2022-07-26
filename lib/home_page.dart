@@ -17,11 +17,16 @@ class HomePageState extends State<HomePage> {
       drawer: Drawer(
         child: Column(
           children: [
-            UserAccountsDrawerHeader(accountName: Text('Pedro'),
-             accountEmail: Text('pedro@email.com'),
-          currentAccountPicture: (
-            Image.network('https://avatars.githubusercontent.com/u/89162241?v=4',)),
-             ),
+            UserAccountsDrawerHeader(
+              accountName: Text('Pedro'),
+              accountEmail: Text('pedro@email.com'),
+              currentAccountPicture: ClipRRect(
+            borderRadius: BorderRadius.circular(40),
+                child: (Image.network(
+                  'https://avatars.githubusercontent.com/u/89162241?v=4',
+                )),
+              ),
+            ),
             ListTile(
               leading: Icon(Icons.home),
               title: Text('Inicio'),
