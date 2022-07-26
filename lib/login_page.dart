@@ -1,5 +1,7 @@
 // ignore_for_file: deprecated_member_use
 
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:ola_mundo/home_page.dart';
 
@@ -31,38 +33,62 @@ class _LoginPageState extends State<LoginPage> {
                 child: Image.asset('assets/images/logo.png'),
               ),
               Container(height: 30),
-              TextField(
-                onChanged: (text) {
-                  email = text;
-                },
-                keyboardType: TextInputType.emailAddress,
-                decoration: InputDecoration(
-                  label: Text('Email'),
-                  border: OutlineInputBorder(),
+              Card(
+                child: Padding(
+                  padding: const EdgeInsets.all(12.0),
+                  child: Column(
+                    children: [
+                      TextField(
+                        onChanged: (text) {
+                          email = text;
+                        },
+                        keyboardType: TextInputType.emailAddress,
+                        decoration: InputDecoration(
+                          label: Text('Email'),
+                          border: OutlineInputBorder(),
+                        ),
+                      ),
+                      SizedBox(height: 10),
+                      TextField(
+                        onChanged: (text) {
+                          senha = text;
+                        },
+                        obscureText: true,
+                        decoration: InputDecoration(
+                          label: Text('Senha'),
+                          border: OutlineInputBorder(),
+                        ),
+                      ),
+                      SizedBox(
+                        height: 15,
+                      ),
+                      Container(
+                        width: double.infinity,
+                        child: RaisedButton(
+                          color: Color.fromARGB(255, 255, 0, 0),
+                          textColor: Colors.white,
+                          onPressed: () {
+                            if (email == 'pedro@email.com' && senha == '123') {
+                              Navigator.of(context)
+                                  .pushReplacementNamed('/Home');
+                              MaterialPageRoute(
+                                  builder: ((context) => HomePage()));
+                            } else {
+                              print('Senha ou Email, invalido!');
+                            }
+                          },
+                          child: Container(
+                            width: double.infinity,
+                            child: Text(
+                              'Entrar',
+                              textAlign: TextAlign.center,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
-              ),
-              SizedBox(height: 10),
-              TextField(
-                onChanged: (text) {
-                  senha = text;
-                },
-                obscureText: true,
-                decoration: InputDecoration(
-                  label: Text('Senha'),
-                  border: OutlineInputBorder(),
-                ),
-              ),
-              SizedBox(height: 15),
-              RaisedButton(
-                onPressed: () {
-                  if (email == 'pedro@email.com' && senha == '123') {
-                    Navigator.of(context).pushReplacementNamed('/Home');
-                    MaterialPageRoute(builder: ((context) => HomePage()));
-                  } else {
-                    print('Senha ou Email, invalido!');
-                  }
-                },
-                child: Text('Entrar'),
               ),
             ],
           ),
@@ -79,7 +105,7 @@ class _LoginPageState extends State<LoginPage> {
         SizedBox(
           height: MediaQuery.of(context).size.height,
           child: Image.asset(
-            'assets/images/fundo.jpg',
+            'assets/images/fundo_netflix.jpg',
             fit: BoxFit.cover,
           ),
         ),
